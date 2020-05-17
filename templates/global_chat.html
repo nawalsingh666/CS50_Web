@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block heading %} <H1>Global Chat </H1> {% endblock %}
+
+{% block body %}
+    <form action="" method="post">
+        <ul>
+        {% for note in notes %}
+        <li> {{ note }} </li>
+
+            {% endfor %}
+        </ul>
+        <input type="text" name="note" placeholder="Write Note here!" autofocus>
+        <button>Submit</button>
+
+    </form>
+{% endblock %}
