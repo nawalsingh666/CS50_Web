@@ -1,0 +1,24 @@
+{% extends "layout_p.html" %}
+
+{% block title %}
+Passengers
+{% endblock %}
+
+{% block body %}
+    <H2 class="display-3"> All passengers list !! <H2>
+        <table class="table table-striped">
+            <tr>
+                <th scope="col"> Name </th>
+                <th scope="col"> Origin </th>
+                <th scope="col"> Destination </th>
+            </tr>
+            {% for passenger in passengers_list %}
+            <tr>
+                <td> <a href="{{ url_for('flight', flight_id=passenger.flight_id) }}"> {{ passenger.name }} </a> </td>
+                <td> <a href="{{ url_for('flight', flight_id=passenger.flight_id) }}"> {{ passenger.origin }} </a> </td>
+                <td> <a href="{{ url_for('flight', flight_id=passenger.flight_id) }}"> {{ passenger.destination }} </a> </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+{% endblock %}
